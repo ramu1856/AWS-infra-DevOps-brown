@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chewy-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: chewy
+  template:
+    metadata:
+      labels:
+        app: chewy
+    spec:
+      containers:
+        - name: chewy-container
+          image: chewy-app
+          ports:
+            - containerPort: 80

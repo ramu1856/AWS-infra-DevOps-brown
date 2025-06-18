@@ -1,0 +1,13 @@
+- name: Deploy App on EC2
+  hosts: app_servers
+  become: yes
+  tasks:
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: present
+
+    - name: Copy App Code
+      copy:
+        src: /home/ubuntu/app/
+        dest: /var/www/html/
