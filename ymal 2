@@ -1,7 +1,0 @@
-global:
-  scrape_interval: 15s
-
-scrape_configs:
-  - job_name: 'ec2-instances'
-    static_configs:
-      - targets: ['ec2-xx-xx-xx-xx.compute-1.amazonaws.com:9100']
